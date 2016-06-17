@@ -9,13 +9,13 @@ var Driver = require('ruff-driver');
 var Sender = require('./infrared-sender.js');
 
 module.exports = new Driver({
-    attach: function () {
+    attach: function (inputs, context, next) {
         this._sender = new Sender();
-        this._sender.open(12);
+        this._sender.open(12, next);
     },
 
-    detach: function () {
-        this._sender.close();
+    detach: function (callback) {
+        this._sender.close(callback);
     },
 
     exports: {
