@@ -6,11 +6,11 @@ This module can be used to send infrared signals.
 
 ## Supported Engines
 
-* Ruff: 1.2.0
+* Ruff: ~1.2.0
 
 ## Supported Models
 
-- [IRT-01](https://rap.ruff.io/devices/irt-01)
+- [irt-01](https://rap.ruff.io/devices/irt-01)
 
 ## Installing
 
@@ -22,20 +22,23 @@ Execute following command and enter a **supported model** to install.
 rap device add <device-id>
 
 # Then enter a supported model, for example:
-# ? model: IRT-01
+# ? model: irt-01
 ```
 
 ## Usage
 
-Here is the basic usage of this driver.
+Here is the basic usage of this driver. You may use it to send data that is received by `irr-01`.
 
 ```js
-$('#<device-id>').send(data, callback);
+$('#<device-id>').send(data, function (error) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+
+    console.log('data sent');
+});
 ```
-
-## FAQ
-
-Cannot send custom data, you can use it to send data that is received by IRR-01.
 
 ## API References
 
