@@ -5,7 +5,7 @@
 
 'use strict';
 
-var Driver = require('ruff-driver');
+var driver = require('ruff-driver');
 var Sender = require('./infrared-sender.js');
 
 var PIN = 12;
