@@ -44,13 +44,17 @@ $('#<device-id>').send(data, function (error) {
 
 If you use this driver under `Ruff: 1.2.0`, you should to press the `HRESET` button to reboot the RuffOS after deploying your application.
 
+This driver can only send some special data, which is hard to be customilized. It is recommended to use Infrared Receiver(`IRR-01`) to receive data and forward the data to Infrared Transmitter(`IRT-01`).
+
 ## API References
 
 ### Methods
 
 #### `send(data, callback)`
 
-Send the data by infrared signal.
+Send the data to modulate the infrared signal.
+
+- **data:** it is an array of number, it's format is hard to explain. This field is expected to be the data that is received by Infrared Receiver(`IRR-01`).
 
 - **callback:** the callback.
 
